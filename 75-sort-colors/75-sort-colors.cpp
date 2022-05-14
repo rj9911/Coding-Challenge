@@ -20,7 +20,7 @@ public:
          for(int i = n1 ; i < n ; i++){
             nums[i] = 2;
     }*/
-         int count0 = 0;
+        /* int count0 = 0;
         int count1 = 0; 
         int count2  = 0;
         for(int i =0; i< nums.size(); i++){
@@ -42,6 +42,27 @@ public:
         for(int i =(count1 + count0); i< nums.size(); i++){
             nums[i] =2;
         }
+        */
         
+        int low = 0 ;
+        int mid = 0 ;
+        int high = nums.size() - 1;
+        
+        while(mid <= high){
+            if(nums[mid] == 0){
+                swap( nums[mid] , nums[low]);
+                low++;
+              mid++;
+            }
+            else if(nums[mid] == 1){
+                mid++;
+            }         
+            else{
+                swap(nums[mid] , nums[high] );
+              
+                high--;
+            }
+                                      }
+                                      
     }
 };
