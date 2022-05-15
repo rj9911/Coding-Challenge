@@ -10,12 +10,7 @@ public:
        }
         // Two pointer approach as like in the 1D array
         for(int i = 0 ; i < rows ; i++){
-        int left = 0, right = rows - 1;
-            while(left < right){
-                swap(matrix[i][left] , matrix[i][right]);
-                    left++;
-                right--;
-            }
+             reverse(matrix[i].begin(), matrix[i].end());
         }
         
     }
