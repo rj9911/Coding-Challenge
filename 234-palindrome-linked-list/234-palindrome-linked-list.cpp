@@ -13,17 +13,38 @@ public:
     
     bool isPalindrome(ListNode* head) {
         
-       ListNode *slow = head, *fast = head, *prev = NULL, *tmp;
-	while(fast && fast -> next) 
-        // finding mid point
-		fast = fast -> next -> next,
-		tmp = slow -> next, slow -> next = prev, prev = slow, slow = tmp;        
-	slow = (fast ? slow -> next : slow); 
-        // for odd length case as mentioned above
-	while(slow)
-        // check if linked lists starting at prev and slow are equal
-		if(slow -> val != prev -> val) return false;
-		else slow = slow -> next, prev = prev -> next;
-	return true;
+    //find the middle node
+        ListNode *fast = head;
+        ListNode *slow = head;
+        while (fast && fast->next) {
+            fast = fast->next->next;
+            slow = slow->next;
+        }
+        if (fast)
+            slow = slow->next;
+
+		// reverse the last half of the list
+        ListNode *dummy = slow;
+        ListNode *last = nullptr;
+        ListNode *next = nullptr;
+        while(dummy){
+            next = dummy->next;
+            dummy->next = last;
+            last = dummy;
+            dummy = next;
+        }
+
+		// compare each half of the list
+        dummy = last;
+        while(dummy){
+            if (dummy->val == head->val){
+                dummy = dummy->next;
+                head = head->next;
+            } 
+            else
+                return false;
+        }
+
+        return true;
     }
 };
