@@ -12,7 +12,7 @@ public:
             
             area =  max(area , area_next);
             
-            if(min(height[left] , height[right]) == height[left])
+            if(height[left] < height[right])
                 left++;
             else
                 right--;
