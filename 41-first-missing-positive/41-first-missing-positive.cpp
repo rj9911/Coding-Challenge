@@ -29,12 +29,14 @@ public:
        int n = nums.size();
         for(int i = 0; i< n; i++){
             if(nums[i] <= 0){
+                // nums[i] < 0 (Mistake done)
                 nums[i] = n+1;
             }
         }
         for(int i = 0 ; i< n ; i++){
             int mark = abs(nums[i]) - 1;
             if((mark >= 0 && mark < n) && (nums[mark] > 0)){
+    // (mark >= 0 && mark <= n) (Mistake done)
                 nums[mark] *= -1;
             }
         }
