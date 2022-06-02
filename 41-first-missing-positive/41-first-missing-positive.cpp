@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int firstMissingPositive(vector<int>& ar) {
+    int firstMissingPositive(vector<int>& nums) {
       /*  int n = nums.size(); 
             set<int> s;
             for(int i = 0; i< n ; i++){
@@ -25,32 +25,25 @@ public:
         */
     
 
-        int n = ar.size();
-
-    for (int i = 0; i < ar.size(); i++)
-    {
-        if (ar[i] <= 0)
-        {
-            ar[i] = n + 1;
+   
+       int n = nums.size();
+        for(int i = 0; i< n; i++){
+            if(nums[i] <= 0){
+                nums[i] = n+1;
+            }
         }
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        int index = abs(ar[i]) - 1;
-        if((index >= 0 && index < n) && (ar[index] > 0))
-        {
-            ar[index] *= -1;
+        for(int i = 0 ; i< n ; i++){
+            int mark = abs(nums[i]) - 1;
+            if((mark >= 0 && mark < n) && (nums[mark] > 0)){
+                nums[mark] *= -1;
+            }
         }
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        if (ar[i] > 0)
-        {
-            return i + 1;
+        for(int i = 0 ; i < n; i++){
+            if(nums[i] > 0){
+                return i+1;
+            }
         }
-    }
+            
     return n + 1;
     }
 };
