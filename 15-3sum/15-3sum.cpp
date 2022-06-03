@@ -20,6 +20,10 @@ public:
         // moves for a
         for(int i; i< nums.size() ;i++){
             if(i==0|| (i > 0 && nums[i] != nums[i-1])){
+                //(mistake here is)
+                // i>=0 that means you need to fullfill the condition as nums[i] != num[i -1]
+                //and that can not be possible since at i = 0, i-1 becomes negative,overflow condition
+                // so you have to take i == 0 separately
                 int low = i+1 , high = nums.size() - 1 , sum = 0 - nums[i];
                 
                 while(low < high){
