@@ -18,7 +18,7 @@ public:
         vector<vector<int>>res;
         
         // moves for a
-        for(int i = 0 ; i< nums.size() ;i++){
+        for(int i; i< nums.size() ;i++){
             if(i==0 || (i > 0 && nums[i] != nums[i-1])){
                 int low = i+1 , high = nums.size() - 1 , sum = 0 - nums[i];
                 
