@@ -6,7 +6,8 @@ public:
         int end = n-1;
         int mid;
         while(start<=end){
-            mid = start + (end - start)/2;
+            mid
+            = start + (end - start)/2;
             if(nums[start] <= nums[end]){
                 return nums[start];
             }
