@@ -7,7 +7,7 @@ public:
         int n = matrix.size();
         int m = matrix[0].size();
         int j = m - 1;
-        while( i < n && j >= 0 ){
+        while((i>=0 && i < n) && (j >= 0 && j< m )){
             if(matrix[i][j] == target) 
                 return true;
             if(matrix[i][j] > target)
