@@ -23,6 +23,7 @@ public:
                 if(mp.find(s2[i]) != mp.end()){
                 mp[s2[i]]++;
                if(mp[s2[i]] == 1)
+        //if(mp[s2[i]] > 0)❌
                    count++;
                 }
                 i++;
