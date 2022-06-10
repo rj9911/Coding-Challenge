@@ -10,41 +10,25 @@
  */
 class Solution {
 public:
-    
     bool isPalindrome(ListNode* head) {
+        vector<int> v;
+        ListNode* temp = head;
+        int n = 0;
+        while(temp != NULL){
+            v.push_back(temp -> val);
+            temp = temp -> next;
+            n++;
+        }
         
-    //find the middle node
-        ListNode *fast = head;
-        ListNode *slow = head;
-        while (fast && fast->next) {
-            fast = fast->next->next;
-            slow = slow->next;
-        }
-        if (fast)
-            slow = slow->next;
-
-		// reverse the last half of the list
-        ListNode *dummy = slow;
-        ListNode *last = nullptr;
-        ListNode *next = nullptr;
-        while(dummy){
-            next = dummy->next;
-            dummy->next = last;
-            last = dummy;
-            dummy = next;
-        }
-
-		// compare each half of the list
-        dummy = last;
-        while(dummy){
-            if (dummy->val == head->val){
-                dummy = dummy->next;
-                head = head->next;
-            } 
-            else
+        int low = 0, high = n-1;
+        while(low < high){
+            if(v.at(low) != v.at(high))
                 return false;
+            else {
+                low++;
+                high--;
+            }
         }
-
         return true;
     }
 };
