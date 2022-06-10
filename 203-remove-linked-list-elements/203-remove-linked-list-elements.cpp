@@ -10,8 +10,8 @@
  */
 class Solution {
 public:
-    ListNode* removeElements(ListNode* head, int val) {
-     /*   if(head == NULL)
+    ListNode* removeElements(ListNode* head, int val1) {
+        if(head == NULL)
             return head;
         ListNode* temp = head;
 
@@ -22,28 +22,10 @@ public:
             }else {
                 temp =temp ->next;
             }
-            
-            if(head -> val =val1)
+        }    
+            if(head -> val == val1){
                 return head -> next;
-        }
-        return head;*/
-         ListNode* k = head;
-        
-        if(head==NULL){
-            return head;
-        }
-        while(k!=NULL && k->next!=NULL){
-            //if(head->val=val){head=head->next; k = head;}
-            if(k->next->val==val){
-                k->next = k->next->next;
             }
-            else{
-                k = k->next;
-            }
-        }
-        if(head->val==val){
-            return head->next;
-        }
         return head;
     }
 };
