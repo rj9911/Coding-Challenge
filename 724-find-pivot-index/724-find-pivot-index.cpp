@@ -12,13 +12,12 @@ public:
         int lsum = 0,rsum = sum,j;
         for(j = 0 ; j< n;j++){
             
-              lsum += nums[j];
-            if(lsum == rsum){
+            rsum -= nums[j];
+            
+            if(lsum == rsum)
                 return j;
-                break;
-            }else{
-                rsum -= nums[j];
-            }
+            
+                lsum += nums[j];
         }
         return -1;
     }
