@@ -4,11 +4,11 @@ public:
         int n = nums.size();
         int wsum =0,tsum =0, rsum = INT_MIN;
         for(int i =0;i<n;i++){
-            tsum += nums[i];
+            tsum += nums[i];  // Total Sum
         }
         int j = 0 , i = 0 , k1 = n-k;
          if(k1 == 0) {
-                rsum = max(rsum , tsum);
+                rsum = max(rsum , tsum);   // Edge Case
                 return rsum;
            }
        while(j<n){
