@@ -1,9 +1,7 @@
 class Solution {
 public:
-   #include<bits/stdc++.h>
-
     int longestConsecutive(vector<int>& nums) {
-            unordered_set<int> s(nums.begin() , nums.end());
+        unordered_set<int> s(nums.begin() , nums.end());
 	        int maxi = 0;
             int n = nums.size();
 	        for(int i = 0 ; i < n;i++){
@@ -18,6 +16,5 @@ public:
        }
 	}
 	return maxi;
-}
-    
+    }
 };
