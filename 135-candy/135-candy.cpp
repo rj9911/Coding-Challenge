@@ -22,8 +22,6 @@ public:
       return ans;
       */
                int size = ratings.size();
-         if(size<2)
-             return size;
          vector<int> lv(size,1);
       vector<int>rv(size,1);
          for(int i=1;i<size;i++){
