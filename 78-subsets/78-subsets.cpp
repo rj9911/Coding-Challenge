@@ -20,6 +20,7 @@ public://Time = Space = O(2^n) as we are making Descision tree.
     
     vector<vector<int>> subsets(vector<int>& nums) {
         // This is working only for n < 20 after than it won't works.
+        sort(nums.begin() , nums.end());
         vector<int> temp;
         vector<vector<int>> result;
         solve(0, nums,temp, result);
