@@ -1,15 +1,22 @@
 class Solution {
 public:
-    bool isPalindrome(int x) {
-        if(x< 0) return false;
-        
-        string str= to_string(x);
-        int n = str.size();
-        
-        for(int i = 0, j= n-1; i <j ; i++, j--){
-            if(str[i] != str[j])
-                return false;
+    
+    int reversenum(int n){
+        long long nums= 0;
+        while(n > 0){
+            nums = nums * 10 + n % 10;
+            n = n / 10;
         }
-        return true;
+        return nums;
+    }
+    
+    bool isPalindrome(int x) {
+       int rev_num = reversenum(x);
+        
+       if(rev_num == x)
+           return true;
+        
+        
+     return false;
     }
 };
