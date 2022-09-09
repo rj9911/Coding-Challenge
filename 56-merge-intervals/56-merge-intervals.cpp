@@ -1,6 +1,7 @@
 class Solution {
 public:
-    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+   vector<vector<int>> merge(vector<vector<int>>& intervals)       {
+
         vector<vector<int>>mergedintervals;
         
         if(intervals.size() == 0)
@@ -16,7 +17,10 @@ public:
         tempinterval = it;
                 }        
     }
+        // Pushed the last interval
         mergedintervals.push_back(tempinterval);
         return mergedintervals;
-    }
+      
+           
+       } 
 };
