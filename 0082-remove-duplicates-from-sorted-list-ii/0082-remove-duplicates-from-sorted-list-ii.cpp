@@ -23,8 +23,8 @@ public:
        }
        ListNode *nod = new ListNode();
        temp=nod;
-       for(auto x:v){
-           ListNode *t = new ListNode(x);
+       for(int i=0;i<v.size();i++){
+           ListNode *t = new ListNode(v[i]);
            temp->next=t;
            temp=temp->next;
        }
