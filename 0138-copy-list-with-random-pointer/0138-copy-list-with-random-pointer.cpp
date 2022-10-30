@@ -15,20 +15,20 @@ public:
 */
 
 class Solution {
- public:
+ public:  // Extra Space
   Node* copyRandomList(Node* head) {
     unordered_map<Node* , Node* > mp;
      Node *temp=head;
       while(temp){
           Node *copy= new Node(temp->val);
-          mp[temp] = copy;
+          mp[temp] = copy; // Deep Copying the Node
           temp=temp->next;
       }
       temp=head;
       while(temp){
-          mp[temp]->next=mp[temp->next];
-          mp[temp]->random=mp[temp->random];
-          temp=temp->next;
+          mp[temp]->next=mp[temp->next];   // Storing the next pointers values
+          mp[temp]->random=mp[temp->random]; // Random Pointer values
+          temp=temp->next; 
       }
       return mp[head];
   }
