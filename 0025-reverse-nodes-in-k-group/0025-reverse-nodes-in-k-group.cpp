@@ -10,25 +10,33 @@
  */
 class Solution {
 public:
+    void reverse(ListNode* s, ListNode* e){
+        ListNode *prev=NULL,*curr=s,*n=s->next;
+        while(prev!=e){
+            curr->next=prev;
+            prev=curr;
+            curr=n;
+            if(n) n=n->next;
+        }
+    }
     ListNode* reverseKGroup(ListNode* head, int k) {
-       vector<int> v;
-       ListNode *temp=head;
-       while(temp){
-           v.push_back(temp->val);
-           temp=temp->next;
-       }
-       int s=v.size(),start=0,end=k;
-       while(k<=s){
-           reverse(v.begin()+start,v.begin()+end);
-           start+=k;
-           end+=k;
-           s-=k;
-       }
-       temp=head;
-       for(int i=0;i<v.size();i++){
-           temp->val=v[i];
-           temp=temp->next;
-       }
-        return head;
+       if(head==NULL|| head->next==NULL || k==1) return head;
+       ListNode *dummy=new ListNode(-1);
+       dummy->next=head;
+       ListNode* beforestart=dummy,*e=head;
+       int i=0;
+        while(e!=NULL){
+            i++;
+            if(i%k==0){
+              ListNode *s=beforestart->next,*temp=e->next;
+                reverse(s,e);
+                beforestart->next=e;
+                s->next=temp;
+                beforestart=s;
+                e=temp;
+            }else
+                e=e->next;
+        }
+        return dummy->next;
     }
 };
