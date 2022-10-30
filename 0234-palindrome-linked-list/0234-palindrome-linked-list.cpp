@@ -17,9 +17,10 @@ class Solution {
     while (fast && fast->next) {
       slow = slow->next;
       fast = fast->next->next;
-    }
+    }  //  Find out the mid point of the list and checks for the palindrome
+      // reverse the list from mid to last and then checks the list.
 
-    if (fast != nullptr)
+    if (fast != nullptr)    // Odd case list
       slow = slow->next;
     slow = reverseList(slow);
 
