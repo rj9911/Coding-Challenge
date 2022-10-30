@@ -6,9 +6,9 @@ public:
             if(x==1){
               count++;
              maxi=max(maxi,count);
-        } else{
-                maxi=max(maxi,count);
-                count=0;
+            }else{
+              maxi=max(maxi,count);
+              count=0;
             }
         }
         return maxi;
