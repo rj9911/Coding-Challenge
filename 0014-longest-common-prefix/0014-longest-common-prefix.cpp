@@ -8,7 +8,7 @@ public:
         string a = strs[0];
         string b = strs[n-1];
         string ans="";
-        for(int i=0;i<a.size();i++){
+        for(int i=0;i<b.size();i++){
             if(a[i]==b[i]) ans+=a[i];
             else break;
         }
