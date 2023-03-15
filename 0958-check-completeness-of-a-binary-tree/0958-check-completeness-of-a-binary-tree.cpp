@@ -23,8 +23,8 @@ public:
             TreeNode* node= q.front();
             
             q.pop();
-            if(node == NULL){
-                seenNull = true;
+            if(node == NULL){ 
+                seenNull = true;  // if you find NULL in the tree Array in between nodes then false
                 continue;
             }
             
