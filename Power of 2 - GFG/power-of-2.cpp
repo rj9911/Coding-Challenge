@@ -13,13 +13,13 @@ class Solution{
     // Function to check if given number n is a power of two.
     bool isPowerofTwo(long long n){
         
-       if(n<1) return false;
-       if(n==1) return true;
+       if(n<1) return false;    // If less than 1 if n==0 
+       if(n==1) return true;    // 2^0 => 1
         
         while(n>1){
-            if(n%2 != 0) return false;
+            if(n%2 != 0) return false;     // At any point if 2^x doesn't exist false
             
-            n >>= 1;
+            n >>= 1;    // Divide by 2 at every point
         }
         
         return true;
